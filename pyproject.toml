@@ -13,4 +13,21 @@ dependencies = [
     "python-multipart==0.0.20",
     "python-dotenv==1.1.1",
     "pytest>=8.4.2",
+    "httpx>=0.24.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers --disable-warnings"
+testpaths = ["backend/tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "unit: Unit tests for individual components",
+    "integration: Integration tests for component interactions",
+    "api: API endpoint tests",
+    "slow: Tests that take longer to run",
 ]
