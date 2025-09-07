@@ -22,6 +22,21 @@ uv sync
 uv add package_name
 ```
 
+### Code Quality Tools
+```bash
+# Format code automatically
+./scripts/format.sh
+
+# Check code quality (linting)
+./scripts/lint.sh
+
+# Run tests
+./scripts/test.sh
+
+# Run complete quality check (format + lint + test)
+./scripts/quality-check.sh
+```
+
 ## Architecture Overview
 
 This is a full-stack RAG (Retrieval-Augmented Generation) system for course materials with the following structure:
@@ -70,3 +85,11 @@ This is a full-stack RAG (Retrieval-Augmented Generation) system for course mate
 - Anthropic Claude Sonnet-4 for AI generation
 - FastAPI with hot reload for development
 - CORS enabled for frontend-backend communication
+
+## Code Quality Standards
+
+- **Black** for automatic code formatting (88 character line length)
+- **isort** for consistent import organization
+- **flake8** for code linting and style checks
+- **pytest** for comprehensive test coverage
+- All code should pass quality checks before committing
