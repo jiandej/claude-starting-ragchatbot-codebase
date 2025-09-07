@@ -16,6 +16,8 @@ dependencies = [
     "black>=24.0.0",
     "isort>=5.12.0",
     "flake8>=7.0.0",
+    "httpx>=0.24.0",
+    "pytest-asyncio>=0.21.0",
 ]
 
 [tool.black]
@@ -59,4 +61,19 @@ exclude = [
     "*.egg-info",
     ".venv",
     ".tox"
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --strict-markers --disable-warnings"
+testpaths = ["backend/tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "unit: Unit tests for individual components",
+    "integration: Integration tests for component interactions",
+    "api: API endpoint tests",
+    "slow: Tests that take longer to run",
 ]
