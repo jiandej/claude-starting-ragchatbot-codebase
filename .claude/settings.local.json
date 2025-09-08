@@ -4,7 +4,9 @@
       "Bash(git add:*)",
       "Bash(export PATH=\"$HOME/.local/bin:$PATH\")",
       "Bash(uv run:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "Bash(git commit:*)",
+      "Bash(git worktree remove:*)"
     ],
     "deny": [],
     "ask": []
